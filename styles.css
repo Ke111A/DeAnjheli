@@ -1,0 +1,240 @@
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Asegura que el GIF no agregue barras de desplazamiento */
+}
+
+.container {
+    padding: 20px;
+}
+
+#title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease-out, glow 1.5s alternate infinite;
+}
+
+#message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out, swing 2s infinite;
+}
+
+#heart-container {
+    position: relative;
+    height: 300px;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2em;
+    color: #ff6f61;
+    animation: float 5s infinite, scaleUp 3s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff6f61;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+.button:hover {
+    background-color: #ff4d4d;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para los GIFs */
+.moving-gif {
+    position: absolute;
+    width: 100px; /* Ajusta el tamaño según tus GIFs */
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animación para el primer GIF (movimiento en espiral) */
+.gif1 {
+    animation: moveSpiral 15s linear infinite;
+}
+
+@keyframes moveSpiral {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-200px);
+    }
+}
+
+/* Animación para el segundo GIF (movimiento en diagonal) */
+.gif2 {
+    animation: moveDiagonal 10s linear infinite;
+}
+
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(calc(100vw - 100px), calc(100vh - 100px));
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+}
+
+/* Animación para el tercer GIF (movimiento en cuadrado) */
+.gif3 {
+    animation: moveSquare 12s linear infinite;
+}
+
+@keyframes moveSquare {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+    25% {
+        transform: translate(-50%, -50%) translate(calc(100vw - 100px), 0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(calc(100vw - 100px), calc(100vh - 100px));
+    }
+    75% {
+        transform: translate(-50%, -50%) translate(0, calc(100vh - 100px));
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+}
+
+/* Animación para el cuarto GIF (movimiento en zigzag) */
+.gif4 {
+    animation: moveZigzag 20s linear infinite;
+}
+
+@keyframes moveZigzag {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+    25% {
+        transform: translate(-50%, -50%) translate(calc(50vw - 100px), calc(20vh - 100px));
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(calc(100vw - 100px), calc(40vh - 100px));
+    }
+    75% {
+        transform: translate(-50%, -50%) translate(calc(50vw - 100px), calc(60vh - 100px));
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+}
+
+/* Animación para el quinto GIF (movimiento en onda) */
+.gif5 {
+    animation: moveWave 18s linear infinite;
+}
+
+@keyframes moveWave {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(calc(100vw - 100px), calc(50vh - 100px)) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+}
